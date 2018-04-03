@@ -65,10 +65,6 @@
     {
       "name": "System - Marketplaces - Marketplaces",
       "x-displayName": "Marketplaces"
-    },
-    {
-      "name": "System - Marketplaces - Marketplaces Agent",
-      "x-displayName": "Marketplaces Agent"
     }
   ],
   "paths": {
@@ -120,31 +116,6 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/marketplaceList"
-            }
-          },
-          "default": {
-            "$ref": "#/responses/GeneralError"
-          }
-        }
-      }
-    },
-    "/system/marketplaces/v1/agents/{marketplaceCode}": {
-      "get": {
-        "tags": [
-          "System - Marketplaces - Marketplaces Agent"
-        ],
-        "summary": "Get the list of marketplace's agents",
-        "operationId": "GetAgentList",
-        "parameters": [
-          {
-            "$ref": "#/parameters/marketplaceCodeParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/agentList"
             }
           },
           "default": {
@@ -403,26 +374,6 @@
           "type": "number",
           "format": "decimal",
           "example": 10602.23
-        }
-      }
-    },
-    "agentList": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/agent"
-      }
-    },
-    "agent": {
-      "type": "object",
-      "properties": {
-        "firstName": {
-          "type": "string"
-        },
-        "lastName": {
-          "type": "string"
-        },
-        "email": {
-          "$ref": "#/definitions/email"
         }
       }
     },
@@ -1937,8 +1888,7 @@
       "name": "System - Marketplaces",
       "tags": [
         "System - Marketplaces - Global",
-        "System - Marketplaces - Marketplaces",
-        "System - Marketplaces - Marketplaces Agent"
+        "System - Marketplaces - Marketplaces"
       ]
     }
   ],
